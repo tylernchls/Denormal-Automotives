@@ -14,6 +14,16 @@ CREATE TABLE make_table (
   make_title character varying(125) NOT NULL
   );
 
+DROP TABLE IF EXISTS model_table;
+
+CREATE TABLE model_table (
+  id serial NOT NULL primary key,
+  model_code character varying(125) NOT NULL,
+  model_title character varying(125) NOT NULL,
+  make_id integer REFERENCES make_table(make_id),
+  year integer NOT NULL
+  );
+
 \c normal_cars normal_user
 \i scripts/denormal_data.sql
 
