@@ -38,4 +38,15 @@ INSERT INTO model_table(model_code, model_title, year, make_id)
   FROM car_models
   INNER JOIN make_table ON car_models.make_title = make_table.make_title;
 
+SELECT DISTINCT make_title FROM car_models;
+
+SELECT DISTINCT model_title FROM car_models WHERE make_code = 'VOLKS';
+
+SELECT DISTINCT make_code, model_code, model_title, year FROM car_models WHERE make_code = 'LAM';
+
+SELECT DISTINCT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
+
+
+
+
 
